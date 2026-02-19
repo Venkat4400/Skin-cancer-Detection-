@@ -99,3 +99,6 @@ python app.py
 
 > [!IMPORTANT]
 > **Medical Disclaimer:** This tool is for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always evaluate with a certified dermatologist.
+
+<img width="1200" height="500" alt="training_history" src="https://github.com/user-attachments/assets/68b9d24a-cd1a-4eaf-8db1-648bd074b7ff" />
+
