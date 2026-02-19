@@ -12,7 +12,7 @@ DermaAI is a professional, hospital-grade AI tool designed for educational and s
 - **Model Architecture**: EfficientNet-V2-S (State-of-the-art accuracy)
 - **Explainability**: Grad-CAM (Gradient-weighted Class Activation Mapping) for lesion localization
 - **Calibration**: Temperature Scaling for reliable confidence scores
-- **Image Processing**: OpenCV, PIL (Pillow), NumPy
+- **Image Processing**: OpenCV, PIL (Pillow), NumPy [Dataset] used : HAM10000 and ISIC  Archive areused but not postd in this because of heavy files . 
 
 ### Frontend (The Interface)
 - **Structure**: Semantic HTML5
@@ -101,4 +101,5 @@ python app.py
 > **Medical Disclaimer:** This tool is for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always evaluate with a certified dermatologist.
 
 <img width="1200" height="500" alt="training_history" src="https://github.com/user-attachments/assets/68b9d24a-cd1a-4eaf-8db1-648bd074b7ff" />
+
 
