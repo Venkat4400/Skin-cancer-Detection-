@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaAI - Professional Skin Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-card">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo-area">
+                    <svg class="medical-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    <h1>DermaAI</h1>
+                </div>
+                <p class="subtitle">Clinical-Grade Skin Lesion Analysis</p>
+                <div class="divider"></div>
+                <p class="description">Please provide patient demographics and upload a clear dermoscopic image for
+                    AI-powered risk assessment.</p>
+            </header>
+
+            <form id="analysis-form" onsubmit="return false;">
+
+                <!-- Section 1: Patient Demographics -->
+                <div class="form-section">
+                    <h3 class="section-label">Patient Vitals</h3>
+                    <div class="input-grid">
+                        <div class="input-field">
+                            <label>Age (Years)</label>
+                            <input type="number" id="age" placeholder="35" min="1" max="120">
+                        </div>
+                        <div class="input-field">
+                            <label>Height (cm)</label>
+                            <input type="number" id="height" placeholder="175" min="50" max="250">
+                        </div>
+                        <div class="input-field">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="weight" placeholder="70" min="10" max="300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Image Acquisition -->
+                <div class="form-section">
+                    <h3 class="section-label">Lesion Acquisition</h3>
+                    <div id="drop-zone" class="upload-area">
+                        <div id="upload-content">
+                            <!-- Upload icon hidden via CSS -->
+                            <p class="upload-text">Select or Drag Image Here</p>
+                            <p class="upload-subtext">Optimal Resolution: 224x224px • Formats: JPG, PNG</p>
+                        </div>
+                        <div id="preview-container" class="preview-container hidden">
+                            <img id="image-preview" src="" alt="Preview">
+                            <button id="remove-btn" class="remove-btn" title="Remove Image">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <input type="file" id="file-input" hidden accept="image/*">
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <button id="analyze-btn" class="analyze-btn" disabled>
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+                        </path>
+                    </svg>
+                    Initialize Analysis
+                </button>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">Processing image... Running TTA & Grad-CAM...</p>
+            </div>
+
+            <!-- Error Display -->
+            <div id="error-box" class="error-box hidden"></div>
+
+            <!-- Result Section -->
+            <div id="result-display" class="result-display hidden">
+                <!-- Dynamically Injected Result Card -->
+            </div>
+
+
+
+
+
+
+
+            <footer class="disclaimer">
+                <div class="footer-content">
+                    <img src="{{ url_for('static', filename='images/disease_code.png') }}" alt="Disease Code"
+                        class="footer-img left-img">
+                    <p class="disclaimer-text"><strong>Medical Disclaimer(Image Quality Guidelines):</strong>
+                        • Low resolution or poor quality images may affect accuracy<br>
+                        • Ensure the lesion is centered in the frame<br>
+                        • Capture a sharp and steady image<br>
+                        • Avoid low or uneven lighting conditions</p>
+                    <img src="{{ url_for('static', filename='images/home_image.png') }}" alt="Home Image"
+                        class="footer-img right-img">
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
