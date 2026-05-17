@@ -58,7 +58,8 @@ Skin Cancer Detection/
 
 
 
-https://github.com/user-attachments/assets/bccae2c9-2e91-4e4e-9c22-34cf77646a1c
+
+
 
 
 
